@@ -2,9 +2,9 @@ package com.zkzhou.myframelib;
 
 import android.content.Context;
 
-import com.zkzhou.myframelib.uiframe.AbsBaseActivity;
+import com.zkzhou.myframelib.uiframe.mvp.ImmersiveStatusBarActivity;
 
-public class MainActivity extends AbsBaseActivity<MainPresent> {
+public class MainActivity extends ImmersiveStatusBarActivity<MainPresent> {
 
     @Override
     public int getContentView() {
@@ -54,5 +54,10 @@ public class MainActivity extends AbsBaseActivity<MainPresent> {
     @Override
     public Context getContext() {
         return this;
+    }
+
+    @Override
+    public boolean hasImmersive() {
+        return true;
     }
 }

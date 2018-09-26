@@ -13,4 +13,16 @@
         <attr name="itemAnimationTime" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="CoverColorImageView">
+        <attr name="cover_color" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="PullRefreshRecyclerView">
+        <attr name="refreshEnabled" format="boolean"/>
+        <attr name="loadMoreEnabled" format="boolean"/>
+        <attr name="refreshHeaderLayout" format="reference"/>
+        <attr name="loadMoreFooterLayout" format="reference"/>
+        <attr name="refreshFinalMoveOffset" format="dimension"/>
+    </declare-styleable>
+
 </resources>

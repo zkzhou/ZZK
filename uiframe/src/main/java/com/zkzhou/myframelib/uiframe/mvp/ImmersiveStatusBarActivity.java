@@ -3,7 +3,7 @@ package com.zkzhou.myframelib.uiframe.mvp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import myframelib.zkzhou.com.common.ImmersiveStatusBarUtil;
+import myframelib.zkzhou.com.common.app.ImmersiveStatusBarUtil;
 
 /**
  * @auther zhouzhankun

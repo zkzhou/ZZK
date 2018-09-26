@@ -1,4 +1,4 @@
-package myframelib.zkzhou.com.common;
+package myframelib.zkzhou.com.common.app;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -17,6 +17,8 @@ import android.view.WindowManager;
 import android.widget.LinearLayout;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+
+import myframelib.zkzhou.com.common.R;
 
 /**
  * @auther zhouzhankun

@@ -3,9 +3,6 @@ package com.zkzhou.myframelib.uiframe.mvp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.zkzhou.myframelib.uiframe.AbsBaseActivity;
-import com.zkzhou.myframelib.uiframe.BasePresent;
-
 import myframelib.zkzhou.com.common.ImmersiveStatusBarUtil;
 
 /**

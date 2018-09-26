@@ -1,4 +1,4 @@
-package com.zkzhou.myframelib.uiframe;
+package com.zkzhou.myframelib.uiframe.mvp;
 
 import android.os.Bundle;
 
@@ -8,7 +8,7 @@ import android.os.Bundle;
  **/
 
 
-public class BasePresent<V> implements IBasePresent{
+public class BasePresent<V> implements IBasePresent {
 
     protected V mView;
 

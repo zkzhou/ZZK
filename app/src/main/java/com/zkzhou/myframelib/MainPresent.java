@@ -1,6 +1,6 @@
 package com.zkzhou.myframelib;
 
-import com.zkzhou.myframelib.uiframe.BasePresent;
+import com.zkzhou.myframelib.uiframe.mvp.BasePresent;
 
 /**
  * @auther zhouzhankun

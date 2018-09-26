@@ -1,4 +1,4 @@
-package com.zkzhou.myframelib.uiframe;
+package com.zkzhou.myframelib.uiframe.mvp;
 
 import android.app.Activity;
 

@@ -92,3 +92,4 @@ public class ImageViewWrapper extends ImageView {
     public void setDefaultImageResource(int resId) {
         mSrcResouceId = resId;
     }
+}

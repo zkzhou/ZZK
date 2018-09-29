@@ -9,9 +9,9 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class BaseQuickAdapter <T, H extends BaseAdapterHelper> extends RecyclerView.Adapter<BaseAdapterHelper> implements View.OnClickListener{
+public abstract class AbsRecyclerBaseAdapter<T, H extends BaseViewHolder> extends RecyclerView.Adapter<H> implements View.OnClickListener{
 
-    protected static final String TAG = BaseQuickAdapter.class.getSimpleName();
+    protected static final String TAG = AbsRecyclerBaseAdapter.class.getSimpleName();
 
     protected final Context context;
 
@@ -30,7 +30,7 @@ public abstract class BaseQuickAdapter <T, H extends BaseAdapterHelper> extends 
      * @param context     The context.
      * @param layoutResId The layout resource id of each item.
      */
-    public BaseQuickAdapter(Context context, int layoutResId) {
+    public AbsRecyclerBaseAdapter(Context context, int layoutResId) {
         this(context, layoutResId, null);
     }
 
@@ -41,7 +41,7 @@ public abstract class BaseQuickAdapter <T, H extends BaseAdapterHelper> extends 
      * @param layoutResId The layout resource id of each item.
      * @param data        A new list is created out of this one to avoid mutable list
      */
-    public BaseQuickAdapter(Context context, int layoutResId, List<T> data) {
+    public AbsRecyclerBaseAdapter(Context context, int layoutResId, List<T> data) {
         this.data = data == null ? new ArrayList<T>() : data;
         this.context = context;
         this.layoutResId = layoutResId;
@@ -57,18 +57,17 @@ public abstract class BaseQuickAdapter <T, H extends BaseAdapterHelper> extends 
         return data.get(position);
     }
     @Override
-    public BaseAdapterHelper onCreateViewHolder(ViewGroup viewGroup,  int viewType) {
+    public H onCreateViewHolder(ViewGroup viewGroup,  int viewType) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(layoutResId, viewGroup, false);
         view.setOnClickListener(this);
-        BaseAdapterHelper vh = new BaseAdapterHelper(view);
-        return vh;
+        return makeViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(BaseAdapterHelper helper,  int position) {
+    public void onBindViewHolder(H helper,  int position) {
         helper.itemView.setTag(position);
         T item = getItem(position);
-        convert((H)helper, item);
+        convert(helper, item);
     }
 
     /**
@@ -77,6 +76,13 @@ public abstract class BaseQuickAdapter <T, H extends BaseAdapterHelper> extends 
      * @param item   The item that needs to be displayed.
      */
     protected abstract void convert(H helper, T item);
+
+    /**
+     * Implement this method and make a view holder.
+     * @param view Target view
+     * @return
+     */
+    protected abstract H makeViewHolder(View view);
 
     @Override
     public void onClick(View v) {

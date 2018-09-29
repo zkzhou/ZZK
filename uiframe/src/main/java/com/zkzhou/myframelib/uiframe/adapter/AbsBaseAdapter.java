@@ -11,18 +11,18 @@ import java.util.List;
  *
  * @param <T>
  */
-public abstract class AbstractAdapter<T> extends BaseAdapter {
+public abstract class AbsBaseAdapter<T> extends BaseAdapter {
 
     protected ArrayList<T> mDatas = new ArrayList<T>();
 
-    public AbstractAdapter() {
+    public AbsBaseAdapter() {
     }
 
-    public AbstractAdapter(List<T> datas) {
+    public AbsBaseAdapter(List<T> datas) {
         setData(datas);
     }
 
-    public AbstractAdapter(T[] datas) {
+    public AbsBaseAdapter(T[] datas) {
         setData(datas);
     }
 

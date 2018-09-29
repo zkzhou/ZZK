@@ -7,29 +7,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class BaseAdapterHelper extends RecyclerView.ViewHolder {
+public class BaseViewHolder extends RecyclerView.ViewHolder {
 
     private SparseArray<View> views;
 
-    public BaseAdapterHelper(View itemView) {
+    public BaseViewHolder(View itemView) {
         super(itemView);
-        this.views = new SparseArray<View>();
-    }
-
-    public TextView getTextView(int viewId) {
-        return retrieveView(viewId);
-    }
-
-    public Button getButton(int viewId) {
-        return retrieveView(viewId);
-    }
-
-    public ImageView getImageView(int viewId) {
-        return retrieveView(viewId);
-    }
-
-    public View getView(int viewId) {
-        return retrieveView(viewId);
+        this.views = new SparseArray<>();
     }
 
     @SuppressWarnings("unchecked")

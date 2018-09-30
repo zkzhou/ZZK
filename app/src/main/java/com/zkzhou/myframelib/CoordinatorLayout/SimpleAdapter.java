@@ -45,7 +45,7 @@ public class SimpleAdapter extends AbsRecyclerBaseAdapter<String,SimpleAdapterHe
      * @param item   The item that needs to be displayed.
      */
     @Override
-    protected void convert(SimpleAdapterHelper helper, String item) {
+    protected void contentConvert(SimpleAdapterHelper helper, String item) {
         helper.getTextView(R.id.textview).setText(item);
     }
 
@@ -56,7 +56,7 @@ public class SimpleAdapter extends AbsRecyclerBaseAdapter<String,SimpleAdapterHe
      * @return
      */
     @Override
-    protected SimpleAdapterHelper makeViewHolder(View view) {
+    protected SimpleAdapterHelper makeViewHolder(View view, int viewType) {
         return new SimpleAdapterHelper(view);
     }
 }

@@ -30,4 +30,6 @@ dependencies {
     api rootProject.ext.dependencies.constraint
     api rootProject.ext.dependencies.support_design
     api rootProject.ext.dependencies.support_recyclerview_v7
+    api rootProject.ext.dependencies.rxJava
+    api rootProject.ext.dependencies.rxAndroid
 }

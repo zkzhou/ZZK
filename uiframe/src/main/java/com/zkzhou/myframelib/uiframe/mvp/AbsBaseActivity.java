@@ -17,7 +17,6 @@ public abstract class AbsBaseActivity<P extends BasePresent> extends Activity im
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getContentView());
         setupView();
         initPresent();
     }
@@ -60,8 +59,6 @@ public abstract class AbsBaseActivity<P extends BasePresent> extends Activity im
         mPresent.onStart();
         initData();
     }
-
-    protected abstract int getContentView();
 
     public abstract void setupView();
 

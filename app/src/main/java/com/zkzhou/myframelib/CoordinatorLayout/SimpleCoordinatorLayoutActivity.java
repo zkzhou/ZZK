@@ -12,25 +12,27 @@ import android.widget.Toast;
 
 import com.zkzhou.myframelib.R;
 import com.zkzhou.myframelib.uiframe.adapter.AbsRecyclerBaseAdapter;
+import com.zkzhou.myframelib.uiframe.inject.annotation.ContentView;
+import com.zkzhou.myframelib.uiframe.inject.annotation.InjectView;
 import com.zkzhou.myframelib.uiframe.mvp.ImmersiveStatusBarActivity;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import myframelib.zkzhou.com.common.app.ViewHolderUtil;
 
 /**
  * @auther zhouzhankun
  * @time 18/9/29 09:43
  **/
 
-
+@ContentView(R.layout.activity_simple_coordinator_layout)
 public class SimpleCoordinatorLayoutActivity extends ImmersiveStatusBarActivity<SimplePresenter> {
 
+    @InjectView(R.id.coordinator_layout)
     private CoordinatorLayout coordinatorLayout;
+    @InjectView(R.id.recycler_view)
     private RecyclerView recyclerView;
-    private SimpleAdapter simpleAdapter;
 
+    private SimpleAdapter simpleAdapter;
     private View headerView, footerView;
 
     @Override
@@ -89,14 +91,7 @@ public class SimpleCoordinatorLayoutActivity extends ImmersiveStatusBarActivity<
     }
 
     @Override
-    protected int getContentView() {
-        return R.layout.activity_simple_coordinator_layout;
-    }
-
-    @Override
     public void setupView() {
-        coordinatorLayout = findViewById(R.id.coordinator_layout);
-        recyclerView = ViewHolderUtil.get(coordinatorLayout, R.id.recycler_view);
         headerView = LayoutInflater.from(getContext()).inflate(R.layout.recycler_header_view, null);
         footerView = LayoutInflater.from(getContext()).inflate(R.layout.recycler_footer_view, null);
     }

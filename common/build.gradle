@@ -8,6 +8,13 @@ android {
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [moduleName: project.getName()]
+            }
+        }
+
     }
 
     buildTypes {
@@ -32,4 +39,6 @@ dependencies {
     api rootProject.ext.dependencies.support_recyclerview_v7
     api rootProject.ext.dependencies.rxJava
     api rootProject.ext.dependencies.rxAndroid
+    api rootProject.ext.dependencies.arouter
+    annotationProcessor rootProject.ext.dependencies.arouterCompiler
 }

@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.zkzhou.myframelib.R;
 import com.zkzhou.myframelib.uiframe.adapter.AbsRecyclerBaseAdapter;
 import com.zkzhou.myframelib.uiframe.inject.annotation.ContentView;
 import com.zkzhou.myframelib.uiframe.inject.annotation.InjectView;
 import com.zkzhou.myframelib.uiframe.mvp.ImmersiveStatusBarActivity;
+import com.zkzhou.myframelib.util.Constants;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,7 @@ import java.util.List;
  * @time 18/9/29 09:43
  **/
 
+@Route(path = Constants.ACTIVITY_URL_SIMPLECOORDINATORLAYOUTACTIVITY)
 @ContentView(R.layout.activity_simple_coordinator_layout)
 public class SimpleCoordinatorLayoutActivity extends ImmersiveStatusBarActivity<SimplePresenter> {
 

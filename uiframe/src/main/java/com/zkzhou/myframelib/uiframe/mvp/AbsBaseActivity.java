@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.alibaba.android.arouter.launcher.ARouter;
+import com.zkzhou.myframelib.uiframe.inject.manager.InjectManager;
+
 /**
  * @auther zhouzhankun
  * @time 18/9/17 15:17
@@ -17,8 +20,12 @@ public abstract class AbsBaseActivity<P extends BasePresent> extends Activity im
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //自定义注入
+        InjectManager.init(this);
         setupView();
         initPresent();
+        //ARouter注入
+        ARouter.getInstance().inject(this);
     }
 
     @Override

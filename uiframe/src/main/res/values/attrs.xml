@@ -25,4 +25,15 @@
         <attr name="refreshFinalMoveOffset" format="dimension"/>
     </declare-styleable>
 
+    <declare-styleable name="CircleLoadingView">
+        <attr name="circle_color" format="color" />
+        <attr name="circle_stroke_width" format="dimension"/>
+        <attr name="arc_color" format="color"/>
+        <attr name="arc_stroke_width" format="dimension"/>
+        <attr name="draw_text" format="boolean"/>
+        <attr name="text_size" format="dimension"/>
+        <attr name="text_color" format="color"/>
+        <attr name="text_stroke_width" format="dimension"/>
+    </declare-styleable>
+
 </resources>
